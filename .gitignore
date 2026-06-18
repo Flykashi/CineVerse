@@ -1,12 +1,15 @@
 # dependency directories
 node_modules/
-server/node_modules/
-client/node_modules/
+**/node_modules/
 
-# build output
+# build outputs
 dist/
 build/
 client/dist/
+client/build/
+
+# Vercel/local build files
+.vercel/
 
 # environment files
 .env

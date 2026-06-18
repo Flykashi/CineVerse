@@ -1,30 +1,29 @@
 # Cineverse
 
-A full stack movie catalog project built with React and Node.js. This sample project includes:
-
-- Express backend with REST API
-- React frontend using Vite
-- CI/CD workflow for install and build validation
-- Local data persistence via JSON file
+A beginner-friendly full stack movie catalog project with React and Express.
 
 ## Project structure
 
-- `server/` - backend API
-- `client/` - frontend application
-- `.github/workflows/ci.yml` - GitHub Actions pipeline
+- `server/` - backend API using Express
+- `client/` - frontend React app built with Vite
+- `vercel.json` - Vercel build configuration for the frontend
 
 ## Local setup
 
-1. Install dependencies from the project root:
+1. From the repo root, install dependencies:
    - `npm install`
-2. Start both backend and frontend together:
+2. Run both services in development:
    - `npm run dev`
-3. Or start only one service:
-   - `npm run server`
-   - `npm run client`
-4. Open the Vite URL shown in the console for the frontend.
+3. Open the frontend URL shown by Vite in your browser.
+
+### Start services separately
+
+- Frontend only: `npm run client`
+- Backend only: `npm run server`
 
 ## Backend API
+
+The server provides a simple movie API:
 
 - `GET /api/health`
 - `GET /api/movies`
@@ -33,19 +32,15 @@ A full stack movie catalog project built with React and Node.js. This sample pro
 - `PUT /api/movies/:id`
 - `DELETE /api/movies/:id`
 
-## Deployment
+## Vercel deployment
 
-- Deploy `client/` to Vercel, Netlify, or GitHub Pages
-- Deploy `server/` to Render, Railway, or Heroku
-- Update the frontend API base URL if backend is hosted separately
+Use Vercel to deploy only the frontend from the repo root.
 
-## Submission checklist
+Settings to use in Vercel:
 
-- Name
-- UID
-- GitHub repository link
-- GitHub repository screenshot
-- CI/CD GitHub Actions screenshot
-- CI/CD YAML file screenshot
-- Deployment platform screenshot
-- Live project deployment link
+- Application Preset: `Other`
+- Root Directory: `.`
+- Build Command: `npm run vercel-build`
+- Output Directory: `client/dist`
+
+> The backend is not deployed by Vercel in this setup. If you want a full-stack deployment, host the backend separately and update `VITE_API_URL`.
